@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.API.Curriculum", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.API.BolsaTrabajo", "Coling.API.BolsaTrabajo\Coling.API.BolsaTrabajo.csproj", "{0B69E771-BC0D-4258-992B-91259CED6C3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coling.API.Afiliados", "Coling.API.Afiliados\Coling.API.Afiliados.csproj", "{66C8D7A5-AD13-42DD-82B5-A321AA682007}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.API.Afiliados", "Coling.API.Afiliados\Coling.API.Afiliados.csproj", "{66C8D7A5-AD13-42DD-82B5-A321AA682007}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

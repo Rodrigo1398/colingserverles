@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Coling.API.Afiliados.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20240312201523_migracion01")]
-    partial class migracion01
+    [Migration("20240313225955_persona-telefono")]
+    partial class personatelefono
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,7 +50,42 @@ namespace Coling.API.Afiliados.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Personas");
+                    b.ToTable("Persona");
+                });
+
+            modelBuilder.Entity("Coling.Shared.Telefono", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Estado")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NumeroTelefono")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PersonaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonaId");
+
+                    b.ToTable("Telefono");
+                });
+
+            modelBuilder.Entity("Coling.Shared.Telefono", b =>
+                {
+                    b.HasOne("Coling.Shared.Persona", "Persona")
+                        .WithMany()
+                        .HasForeignKey("PersonaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Persona");
                 });
 #pragma warning restore 612, 618
         }

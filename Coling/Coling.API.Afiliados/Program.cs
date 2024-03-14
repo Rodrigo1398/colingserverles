@@ -1,4 +1,6 @@
 using Coling.API.Afiliados;
+using Coling.API.Afiliados.interfaces;
+using Coling.API.Afiliados.services;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +20,11 @@ var host = new HostBuilder()
         services.ConfigureFunctionsApplicationInsights();
         services.AddDbContext<Contexto>(options => options.UseSqlServer(
                      configuration.GetConnectionString("conexionDB")));
+        services.AddScoped<PersonaServices>();
+        services.AddScoped<TelefonoServices>();
+        services.AddScoped<TipoSocialService>();
+        services.AddScoped<PersonaTipoSocialService>();
+        services.AddScoped<AfiliadoServices>();
     })
     .Build();
 

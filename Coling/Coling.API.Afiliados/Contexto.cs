@@ -12,6 +12,19 @@ namespace Coling.API.Afiliados
     {
         public Contexto(DbContextOptions<Contexto> options) : base(options)
         {}
-        public virtual DbSet<Persona> Personas { get; set; }
+        public virtual DbSet<Persona> Persona { get; set; }
+        public virtual DbSet<Telefono> Telefono { get; set; }
+        public virtual DbSet<Direccion> Direccion { get; set; }
+        public virtual DbSet<TipoSocial> TipoSocial { get; set; }
+        public virtual DbSet<PersonaTipoSocial> PersonaTipoSocial { get; set; }
+        public virtual DbSet<Afiliado> Afiliado { get; set; }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Telefono>()
+        //        .HasOne(t => t.Persona)
+        //        .WithMany(p => p.Telefono)
+        //        .HasForeignKey(t => t.PersonaId);
+        //}
     }
 }

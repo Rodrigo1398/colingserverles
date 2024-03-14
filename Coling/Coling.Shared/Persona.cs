@@ -14,6 +14,7 @@ namespace Coling.Shared
         public DateTime FechaNacimiento { get; set; }
         public string? Foto { get; set; }
         public bool? Estado { get; set; }
+        //public virtual ICollection<Telefono>? Telefono { get; set; }
 
     }
 }

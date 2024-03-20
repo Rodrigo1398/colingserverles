@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 using Microsoft.Extensions.Logging;
 using System.Net;
 
@@ -22,6 +23,9 @@ namespace Coling.API.Afiliados.endpoints
         }
 
         [Function("ListarPersonas")]
+        [OpenApiOperation("ListarPersonas", Description = "Sirve para Listar Personas")]
+        [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(List<Persona>),
+            Description = "Muestra las personas insertadas")]
         public async Task<HttpResponseData> ListarPersonas([HttpTrigger(AuthorizationLevel.Function, "get", Route = "ListarPersonas")] HttpRequestData req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
@@ -32,6 +36,9 @@ namespace Coling.API.Afiliados.endpoints
         }
 
         [Function("InsertarPersona")]
+        [OpenApiOperation("InsertarPersona",Description = "Sirve para Insertar Personas")]
+        [OpenApiResponseWithBody(statusCode:HttpStatusCode.OK,contentType:"application/json",bodyType:typeof(Persona),
+            Description ="Muestra la persona insertada")]
         public async Task<HttpResponseData> InsertarPersona([HttpTrigger(AuthorizationLevel.Function, "post", Route = "InsertarPersona")] HttpRequestData req)
         {
             try

@@ -27,7 +27,7 @@ namespace Coling.API.Afiliados.services
             return false;
         }
 
-        public async Task<bool> InsertarAfiliado(Afiliado afiliado)
+        public async Task<bool> InsertarAfiliado(Shared.Afiliados afiliado)
         {
             contexto.Afiliado.Add(afiliado);
             int response = await contexto.SaveChangesAsync();
@@ -35,21 +35,21 @@ namespace Coling.API.Afiliados.services
             return false;
         }
 
-        public async Task<Afiliado> ListarAfiliadoById(int id)
+        public async Task<Shared.Afiliados> ListarAfiliadoById(int id)
         {
             var afiliado = await contexto.Afiliado.FirstOrDefaultAsync(t => t.Id == id);
             return afiliado;
         }
 
-        public async Task<List<Afiliado>> ListarAfiliados()
+        public async Task<List<Shared.Afiliados>> ListarAfiliados()
         {
             var resp = await contexto.Afiliado.ToListAsync();
             return resp;
         }
 
-        public async Task<bool> ModificarAfiliado(Afiliado afiliado, int id)
+        public async Task<bool> ModificarAfiliado(Shared.Afiliados afiliado, int id)
         {
-            Afiliado afi = await contexto.Afiliado.FirstOrDefaultAsync(t => t.Id == id);
+            Shared.Afiliados afi = await contexto.Afiliado.FirstOrDefaultAsync(t => t.Id == id);
             if (afi == null) return false;
             afi.NroTituloProvicional = afiliado.NroTituloProvicional;
             afi.FechaAfiliacion = afiliado.FechaAfiliacion;

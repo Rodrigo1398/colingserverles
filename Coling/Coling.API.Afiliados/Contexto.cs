@@ -17,7 +17,7 @@ namespace Coling.API.Afiliados
         public virtual DbSet<Direccion> Direccion { get; set; }
         public virtual DbSet<TipoSocial> TipoSocial { get; set; }
         public virtual DbSet<PersonaTipoSocial> PersonaTipoSocial { get; set; }
-        public virtual DbSet<Afiliado> Afiliado { get; set; }
+        public virtual DbSet<Shared.Afiliados> Afiliado { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{

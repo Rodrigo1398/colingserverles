@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Coling.Shared
 {
-    public class Afiliado
+    public class Afiliados
     {
         [Key]
         public int Id { get; set; }

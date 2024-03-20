@@ -32,7 +32,7 @@ namespace Coling.API.Afiliados.endpoints
         [Function("ListarAfiliadoById")]
         public async Task<HttpResponseData> ListarTipoSocialById([HttpTrigger(AuthorizationLevel.Function, "get", Route = "ListarTipoSocialById")] HttpRequestData req)
         {
-            var afiliado = await req.ReadFromJsonAsync<Afiliado>() ?? throw new Exception("Debe ingresar un telefono");
+            var afiliado = await req.ReadFromJsonAsync<Shared.Afiliados>() ?? throw new Exception("Debe ingresar un telefono");
             var afiliadoId = await _afiliado.ListarAfiliadoById(afiliado.Id);
             if (afiliadoId == null) return req.CreateResponse(HttpStatusCode.BadRequest);
             var resp = req.CreateResponse(HttpStatusCode.OK);
@@ -44,7 +44,7 @@ namespace Coling.API.Afiliados.endpoints
         {
             try
             {
-                var afiliado = await req.ReadFromJsonAsync<Afiliado>() ?? throw new Exception("Debe ingresar un telefono");
+                var afiliado = await req.ReadFromJsonAsync<Shared.Afiliados>() ?? throw new Exception("Debe ingresar un telefono");
 
                 bool seGuardo = await _afiliado.InsertarAfiliado(afiliado);
 
@@ -66,7 +66,7 @@ namespace Coling.API.Afiliados.endpoints
         {
             try
             {
-                var afiliado = await req.ReadFromJsonAsync<Afiliado>() ?? throw new Exception("Debe ingresar un telefono");
+                var afiliado = await req.ReadFromJsonAsync<Shared.Afiliados>() ?? throw new Exception("Debe ingresar un telefono");
 
                 bool seGuardo = await _afiliado.ModificarAfiliado(afiliado, afiliado.Id);
 

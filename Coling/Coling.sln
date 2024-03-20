@@ -5,19 +5,19 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{1D8D9BA4-83FB-430B-B979-9988C0F536F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coling.Shared", "Coling.Shared\Coling.Shared.csproj", "{BA378D5D-8E0D-40CE-B5D0-EF51B271C31F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.Shared", "Coling.Shared\Coling.Shared.csproj", "{BA378D5D-8E0D-40CE-B5D0-EF51B271C31F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multiplataforma", "Multiplataforma", "{54B24BBE-C936-4CC7-9DEB-581EF5CC40AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coling.Vista", "Coling.Vista\Coling.Vista.csproj", "{3F9EDA4E-1358-4096-A13A-3414F44DF9B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.Vista", "Coling.Vista\Coling.Vista.csproj", "{3F9EDA4E-1358-4096-A13A-3414F44DF9B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIMicroservices", "APIMicroservices", "{9338FD37-84D5-4940-B63C-BB2DB10237EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coling.API.Afiliados", "Coling.API\Coling.API.Afiliados.csproj", "{D4A5CF83-A942-42CB-94F3-23EE6C68B4EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.API.Curriculum", "Coling.API.Curriculum\Coling.API.Curriculum.csproj", "{BB800C3A-5730-4CC8-8DE6-D3DB06F40F49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coling.API.Curriculum", "Coling.API.Curriculum\Coling.API.Curriculum.csproj", "{BB800C3A-5730-4CC8-8DE6-D3DB06F40F49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.API.BolsaTrabajo", "Coling.API.BolsaTrabajo\Coling.API.BolsaTrabajo.csproj", "{0B69E771-BC0D-4258-992B-91259CED6C3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coling.API.BolsaTrabajo", "Coling.API.BolsaTrabajo\Coling.API.BolsaTrabajo.csproj", "{0B69E771-BC0D-4258-992B-91259CED6C3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.API.Afiliados", "Coling.API.Afiliados\Coling.API.Afiliados.csproj", "{66C8D7A5-AD13-42DD-82B5-A321AA682007}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		{3F9EDA4E-1358-4096-A13A-3414F44DF9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F9EDA4E-1358-4096-A13A-3414F44DF9B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F9EDA4E-1358-4096-A13A-3414F44DF9B5}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{D4A5CF83-A942-42CB-94F3-23EE6C68B4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4A5CF83-A942-42CB-94F3-23EE6C68B4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4A5CF83-A942-42CB-94F3-23EE6C68B4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4A5CF83-A942-42CB-94F3-23EE6C68B4EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB800C3A-5730-4CC8-8DE6-D3DB06F40F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB800C3A-5730-4CC8-8DE6-D3DB06F40F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB800C3A-5730-4CC8-8DE6-D3DB06F40F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,6 +43,10 @@ Global
 		{0B69E771-BC0D-4258-992B-91259CED6C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B69E771-BC0D-4258-992B-91259CED6C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B69E771-BC0D-4258-992B-91259CED6C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C8D7A5-AD13-42DD-82B5-A321AA682007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C8D7A5-AD13-42DD-82B5-A321AA682007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C8D7A5-AD13-42DD-82B5-A321AA682007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C8D7A5-AD13-42DD-82B5-A321AA682007}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,9 +54,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BA378D5D-8E0D-40CE-B5D0-EF51B271C31F} = {1D8D9BA4-83FB-430B-B979-9988C0F536F5}
 		{3F9EDA4E-1358-4096-A13A-3414F44DF9B5} = {54B24BBE-C936-4CC7-9DEB-581EF5CC40AD}
-		{D4A5CF83-A942-42CB-94F3-23EE6C68B4EB} = {9338FD37-84D5-4940-B63C-BB2DB10237EE}
 		{BB800C3A-5730-4CC8-8DE6-D3DB06F40F49} = {9338FD37-84D5-4940-B63C-BB2DB10237EE}
 		{0B69E771-BC0D-4258-992B-91259CED6C3B} = {9338FD37-84D5-4940-B63C-BB2DB10237EE}
+		{66C8D7A5-AD13-42DD-82B5-A321AA682007} = {9338FD37-84D5-4940-B63C-BB2DB10237EE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09850759-A2A1-4068-8E48-84B2482FE33F}

@@ -19,11 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.API.BolsaTrabajo", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.API.Afiliados", "Coling.API.Afiliados\Coling.API.Afiliados.csproj", "{66C8D7A5-AD13-42DD-82B5-A321AA682007}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coling.Utilitarios", "Coling.Utilitarios\Coling.Utilitarios.csproj", "{2C2E08A3-755E-439E-A52D-5A11E0D1D598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.Utilitarios", "Coling.Utilitarios\Coling.Utilitarios.csproj", "{2C2E08A3-755E-439E-A52D-5A11E0D1D598}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coling.Repositorio", "Coling.Repositorio\Coling.Repositorio.csproj", "{C807CCC0-F0CB-4797-818E-FBFD1E49795A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.Repositorio", "Coling.Repositorio\Coling.Repositorio.csproj", "{C807CCC0-F0CB-4797-818E-FBFD1E49795A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coling.Authentication", "Coling.Authentication\Coling.Authentication.csproj", "{F1DE223F-965C-4CAE-A32D-46AF2CAA79D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coling.Authentication", "Coling.Authentication\Coling.Authentication.csproj", "{F1DE223F-965C-4CAE-A32D-46AF2CAA79D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

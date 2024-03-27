@@ -5,34 +5,32 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Coling.API.BolsaTrabajo.services
 {
-    public class SolicitudService : ISolicitud
+    public class OfertaLaboralService:IOfertaLaboral
     {
         public readonly MongoClient mongoClient;
         private readonly IMongoDatabase database;
         private readonly string collectionName;
 
-        public SolicitudService(IConfiguration conf)
+        public OfertaLaboralService(IConfiguration conf)
         {
             var configuration = conf.GetSection("cadenaMongo").Value ?? "";
             this.mongoClient = new MongoClient(configuration);
             database = mongoClient.GetDatabase("ColingDB");
-            collectionName = "Solicitud";
+            collectionName = "OfertaLaboral";
         }
-        public async Task<bool> Create(Solicitud solicitud)
+        public async Task<bool> Create(OfertaLaboral ofertaLaboral)
         {
             try
             {
-                if (solicitud==null) return false;
-                var soli = database.GetCollection<Solicitud>(collectionName);
-                await soli.InsertOneAsync(solicitud);
+                if (ofertaLaboral == null) return false;
+                var oferta = database.GetCollection<OfertaLaboral>(collectionName);
+                await oferta.InsertOneAsync(ofertaLaboral);
                 return true;
             }
             catch (Exception)
@@ -51,9 +49,9 @@ namespace Coling.API.BolsaTrabajo.services
                     throw new ArgumentException("El ID proporcionado no es válido.");
                 }
 
-                var filter = Builders<Solicitud>.Filter.Eq("_id", _id);
-                var solicitudCollection = database.GetCollection<Solicitud>(collectionName);
-                var deleteResult = await solicitudCollection.DeleteOneAsync(filter);
+                var filter = Builders<OfertaLaboral>.Filter.Eq("_id", _id);
+                var oferta = database.GetCollection<OfertaLaboral>(collectionName);
+                var deleteResult = await oferta.DeleteOneAsync(filter);
 
                 return deleteResult.DeletedCount > 0;
             }
@@ -65,7 +63,7 @@ namespace Coling.API.BolsaTrabajo.services
         }
 
 
-        public async Task<Solicitud> Get(string id)
+        public async Task<OfertaLaboral> Get(string id)
         {
             try
             {
@@ -75,11 +73,11 @@ namespace Coling.API.BolsaTrabajo.services
                     throw new ArgumentException("El ID proporcionado no es válido.");
                 }
 
-                var filter = Builders<Solicitud>.Filter.Eq("_id", _id);
-                var solicitudCollection = database.GetCollection<Solicitud>(collectionName);
-                var solicitud = await solicitudCollection.Find(filter).FirstOrDefaultAsync();
+                var filter = Builders<OfertaLaboral>.Filter.Eq("_id", _id);
+                var oferta = database.GetCollection<OfertaLaboral>(collectionName);
+                OfertaLaboral ofertaLaboral = await oferta.Find(filter).FirstOrDefaultAsync();
 
-                return solicitud;
+                return ofertaLaboral;
             }
             catch (Exception ex)
             {
@@ -89,13 +87,13 @@ namespace Coling.API.BolsaTrabajo.services
         }
 
 
-        public async Task<List<Solicitud>> GetAll()
+        public async Task<List<OfertaLaboral>> GetAll()
         {
             try
             {
-                var solicitud = database.GetCollection<Solicitud>(collectionName);
-                List<Solicitud> solicitudes = await solicitud.Find(Builders<Solicitud>.Filter.Empty).ToListAsync();
-                return solicitudes;
+                var oferta = database.GetCollection<OfertaLaboral>(collectionName);
+                List<OfertaLaboral> ofertas = await oferta.Find(Builders<OfertaLaboral>.Filter.Empty).ToListAsync();
+                return ofertas;
             }
             catch (Exception)
             {
@@ -104,18 +102,18 @@ namespace Coling.API.BolsaTrabajo.services
             }
         }
 
-        public async Task<bool> Update(Solicitud solicitud,string id)
+        public async Task<bool> Update(OfertaLaboral ofertaLaboral, string id)
         {
             try
             {
                 ObjectId _id;
                 ObjectId.TryParse(id, out _id);
-                var filter = Builders<Solicitud>.Filter.Eq("_id", _id);
-                var update = Builders<Solicitud>.Update
-                    .Set("PretencionSalarial", solicitud.PretencionSalarial)
-                    .Set("Acercade", solicitud.Acercade);
+                var filter = Builders<OfertaLaboral>.Filter.Eq("_id", _id);
+                var update = Builders<OfertaLaboral>.Update
+                    .Set("Area", ofertaLaboral.Area)
+                    .Set("TipoContrato", ofertaLaboral.TipoContrato);
 
-                var updateResult = await database.GetCollection<Solicitud>(collectionName).UpdateOneAsync(filter, update);
+                var updateResult = await database.GetCollection<OfertaLaboral>(collectionName).UpdateOneAsync(filter, update);
                 return updateResult.ModifiedCount > 0;
             }
             catch (Exception ex)

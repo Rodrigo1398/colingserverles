@@ -10,8 +10,8 @@ namespace Coling.API.BolsaTrabajo.interfaces
 {
     public interface ISolicitud
     {
-        public Task<bool> Create<T>(string collectionName,T document);
-        public Task<bool> Update(string collectionName, Solicitud solicitud);
+        public Task<bool> Create(Solicitud solicitud);
+        public Task<bool> Update(Solicitud solicitud,string id);
         public Task<bool> Delete(string id);
         public Task<Solicitud> Get(string id);
         public Task<List<Solicitud>> GetAll();
